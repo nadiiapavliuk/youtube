@@ -23,7 +23,6 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     var videos: [Video]?
     let cellId = "cellId"
     
-    //this function is function which call Api and we have it in separate class.DONT forget to write next in this function!!
     func fetchVideos() {
         ApiService.sharedInstance.fetchVideos { (videos: [Video]) in
             self.videos = videos
@@ -44,8 +43,6 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     //COLLECTION VIEW FOR ALL VIDEOS(VERTICAL COLLECTION)
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return videos?.count ?? 0
     }

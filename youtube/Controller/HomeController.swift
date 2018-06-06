@@ -71,7 +71,6 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     @objc func handleMore() {
         //show menu
-        //this call incapsulation when we pack it(code which change alpha of color when we tap on the more button) to another class
         settingsLauncher.showSettings()
     }
     

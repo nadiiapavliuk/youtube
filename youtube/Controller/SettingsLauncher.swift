@@ -42,10 +42,7 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     let settings: [Setting] = {
         
         let settingsSetting = Setting(name: .Settings, imageName: "settings")
-        //        let privacySetting = Setting(name: .TermsAndPrivacyPolicy, imageName: "privacy")
-        //        let feedbackSetting = Setting(name: .Feedback, imageName: "feedback")
-        
-        
+
         let cancelSetting = Setting(name: .Cancel, imageName: "cancel")
         
         return [settingsSetting, Setting(name: .TermsAndPrivacyPolicy, imageName: "privacy"), Setting(name: .Feedback, imageName: "feedback"), Setting(name: .Help, imageName: "help"), Setting(name: .SwitchAccount, imageName: "account1"), cancelSetting]

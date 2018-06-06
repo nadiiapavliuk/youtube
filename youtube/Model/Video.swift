@@ -9,21 +9,6 @@
 import UIKit
 
 
-//class  Video: NSObject {
-//    var thumbnail_image_name: String?
-//    var title: String?
-//    var number_of_views: NSNumber?
-//    var uploadDate: NSDate?
-//    var duration: NSNumber?
-//    
-//    var channel: Channel?
-//}
-//class Channel:NSObject{
-//    var name:String?
-//    var profileImage:String?
-//}
-
-
 struct Video: Decodable {
     
     var thumbnailImageName: String?

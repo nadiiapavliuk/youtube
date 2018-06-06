@@ -39,18 +39,13 @@ class VideoCell: BaseCell {
                 
                 let subtitleText = "\(channelName) • \( numberFormatter.string(for: numberOfViews)!)" + "\n" + "• 2 years ago"
                 
-//                let subtitleText = "\(channelName) • \(numberFormatter.string(from: numberOfViews)!)" + "\n" + "• 2 years ago"
-//
-//
                 subtitleTextView.text = subtitleText
                 
             }
             
             //measure title text
             if let title = video?.title {
-                //let size = CGSize(width: frame.width - 16 - 8 - 44 - 16, height: 1000)
                 let size = Utility.shared.CGSizeMake(frame.width - 16 - 8 - 44 - 16 , 1000)
-                
                 
                 let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
                 let estimatedRect = NSString(string: title).boundingRect(with: size, options: options, attributes: [kCTFontAttributeName as NSAttributedStringKey: UIFont.systemFont(ofSize: 13)], context: nil)
@@ -83,15 +78,9 @@ class VideoCell: BaseCell {
     }
     
     
-   
-    
-    
-    
-    
     let thumbnailImageView: CustomImageView = {
         let imageView = CustomImageView()
-        //imageView.backgroundColor = UIColor.blue
-        //imageView.image = UIImage(named: "photo")
+       
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
@@ -99,12 +88,10 @@ class VideoCell: BaseCell {
     
     let userProfileImageView: CustomImageView = {
         let imageView = CustomImageView()
-        //imageView.backgroundColor = UIColor.red
-       // imageView.image = UIImage(named: "search")
+       
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 22
         imageView.layer.masksToBounds = true
-       // imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -115,10 +102,8 @@ class VideoCell: BaseCell {
     }()
     let titleLabel: UILabel = {
         let label = UILabel()
-        // label.backgroundColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.white
-       // label.text = "Any text....fbfdhjckxz,nbcvxhjdsknmbcfhdsjk.."
         label.numberOfLines = 2
         return label
     }()
@@ -127,7 +112,6 @@ class VideoCell: BaseCell {
         textView.backgroundColor = UIColor.black
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.textColor = UIColor.lightGray
-        //textView.text = "subtitle text is here. ...looooooooonngggggg gggggggggggggghjh hgggggfgffybgvcfdfgyhjvhcdfry jjj."
         textView.textContainerInset = UIEdgeInsetsMake(0, -4, 0, 0)
         textView.isEditable = false
         textView.isSelectable = false
@@ -143,10 +127,8 @@ class VideoCell: BaseCell {
         addSubview(userProfileImageView)
         addSubview(titleLabel)
         addSubview(subtitleTextView)
+        
         // Auto layout constraints
-        
-        //        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutFormatOptions() , metrics: nil, views: ["v0": thumbnailImageView]))
-        
         
         //horizontal constraints:
         
@@ -171,21 +153,7 @@ class VideoCell: BaseCell {
         //height constraint
         titleLabelHeightConstraint = NSLayoutConstraint(item: titleLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20)
         addConstraint(titleLabelHeightConstraint!)
-        
-//
-//        //top constraints
-//        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 8))
-//
-//        //left constraint
-//        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .left, relatedBy: .equal, toItem: userProfileImageView, attribute: .right, multiplier: 1, constant: 8))
-//
-//        //right constraint
-//        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .right, relatedBy: .equal, toItem: thumbnailImageView, attribute: .right, multiplier: 1, constant: 0))
-//
-//        //height constraint
-//        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 30))
-//
-        
+
         
         //left constraint
         addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .left, relatedBy: .equal, toItem: titleLabel, attribute: .left, multiplier: 1, constant: 0))
